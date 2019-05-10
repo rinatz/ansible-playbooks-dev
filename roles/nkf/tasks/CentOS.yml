@@ -1,0 +1,10 @@
+---
+
+- name: install nkf
+  become: yes
+  yum:
+    state: present
+    name:
+      - nkf
+  tags:
+    - nkf

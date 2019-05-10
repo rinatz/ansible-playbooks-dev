@@ -1,0 +1,38 @@
+---
+
+- name: install java-common
+  become: yes
+  apt:
+    name: java-common
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+  tags:
+    - java
+
+- name: install corretto
+  become: yes
+  apt:
+    deb: "{{ deb }}"
+    state: present
+  tags:
+    - java
+
+- name: install jenv
+  shell: |
+    eval "$(anyenv init -)"
+    anyenv install -s jenv
+  environment:
+    PATH: "{{ anyenv_root }}/bin:{{ ansible_env.PATH }}"
+  tags:
+    - java
+
+- name: enable java
+  shell: |
+    eval "$(anyenv init -)"
+    jenv add {{ java_home }}
+    jenv global {{ java_version }}
+  environment:
+    PATH: "{{ anyenv_root }}/bin:{{ ansible_env.PATH }}"
+  tags:
+    - java

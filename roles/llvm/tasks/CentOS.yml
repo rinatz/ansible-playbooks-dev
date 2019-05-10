@@ -1,0 +1,9 @@
+---
+
+- name: install packages
+  yum:
+    state: present
+    name:
+      - llvm-toolset-7
+  tags:
+    - llvm

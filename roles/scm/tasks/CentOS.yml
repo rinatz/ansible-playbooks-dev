@@ -1,0 +1,20 @@
+---
+
+- name: install packages
+  become: yes
+  yum:
+    state: present
+    name:
+      - git2u
+      - openssh-clients
+      - procps-ng
+  tags:
+    - scm
+
+- name: install git-lfs
+  become: yes
+  shell: curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | bash
+  args:
+    warn: no
+  tags:
+    - scm

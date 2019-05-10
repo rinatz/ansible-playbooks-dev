@@ -1,0 +1,39 @@
+---
+
+- hosts: all
+  roles:
+    - setup
+    - scm
+    - buildpack
+    - dotfiles
+    - bat
+    - cifs-utils
+    - direnv
+    - dos2unix
+    - exa
+    - ghq
+    - graphviz
+    - gron
+    - jq
+    - libxml
+    - nkf
+    - osquery
+    - peco
+    - stow
+    - caddy
+    - cmake
+    - doxygen
+    - docker
+    - docker-compose
+    - fcgi
+    - llvm
+    - ninja
+    - gdb
+    - valgrind
+    - anyenv
+    - go
+    - java
+    - node
+    - python
+    - ruby
+    - rust

@@ -1,0 +1,36 @@
+---
+
+- name: set timezone
+  become: yes
+  timezone:
+    name: Asia/Tokyo
+  tags:
+    - setup
+
+- name: add yum repositories
+  become: yes
+  yum:
+    state: present
+    name:
+      - epel-release
+      - centos-release-scl
+      - https://centos7.iuscommunity.org/ius-release.rpm
+  tags:
+    - setup
+
+- name: install yum-utils
+  become: yes
+  yum:
+    state: present
+    name:
+      - yum-utils
+  tags:
+    - setup
+
+- name: update packages
+  become: yes
+  yum:
+    state: latest
+    name: "*"
+  tags:
+    - setup

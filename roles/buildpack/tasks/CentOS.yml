@@ -1,0 +1,10 @@
+---
+
+- name: install packages
+  become: yes
+  yum:
+    state: present
+    name:
+      - "@Development Tools"
+  tags:
+    - buildpack

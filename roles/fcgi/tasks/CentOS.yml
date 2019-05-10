@@ -1,0 +1,11 @@
+---
+
+- name: install packages
+  become: yes
+  yum:
+    state: present
+    name:
+      - fcgi-devel
+      - spawn-fcgi
+  tags:
+    - fcgi

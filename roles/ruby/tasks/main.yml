@@ -1,0 +1,33 @@
+---
+
+- name: install rbenv
+  shell: |
+    eval "$(anyenv init -)"
+    anyenv install -s rbenv
+  environment:
+    PATH: "{{ anyenv_root }}/bin:{{ ansible_env.PATH }}"
+  tags:
+    - ruby
+
+- name: compile dynamic bash extension
+  shell: |
+    eval "$(anyenv init -)"
+    cd $(rbenv root)
+    src/configure
+    make -C src
+  ignore_errors: yes
+  environment:
+    PATH: "{{ anyenv_root }}/bin:{{ ansible_env.PATH }}"
+  tags:
+    - ruby
+
+- name: install ruby
+  shell: |
+    eval "$(anyenv init -)"
+    rbenv install -s {{ ruby_version }}
+    rbenv global {{ ruby_version }}
+    gem install bundler
+  environment:
+    PATH: "{{ anyenv_root }}/bin:{{ ansible_env.PATH }}"
+  tags:
+    - ruby

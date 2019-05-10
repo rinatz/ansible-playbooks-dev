@@ -1,0 +1,24 @@
+---
+
+- name: add rpm key
+  become: yes
+  rpm_key:
+    key: https://pkg.osquery.io/rpm/GPG
+    state: present
+  tags:
+    - osquery
+
+- name: add yum repository
+  become: yes
+  shell: yum-config-manager --add-repo https://pkg.osquery.io/rpm/osquery-s3-rpm.repo
+  tags:
+    - osquery
+
+- name: install osquery
+  become: yes
+  yum:
+    state: present
+    name:
+      - osquery
+  tags:
+    - osquery
