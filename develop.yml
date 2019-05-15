@@ -32,8 +32,8 @@
     - valgrind
     - anyenv
     - go
-    - java
     - node
     - python
     - ruby
+    - java
     - rust

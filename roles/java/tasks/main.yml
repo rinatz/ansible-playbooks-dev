@@ -1,5 +1,27 @@
 ---
 
-- include_tasks: "{{ ansible_distribution }}.yml"
+- name: install packages
+  become: yes
+  apt:
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+    name: zip
+  tags:
+    - java
+
+- name: install sdkman
+  shell: curl -s "https://get.sdkman.io" | bash
+  args:
+    warn: no
+  tags:
+    - java
+
+- name: install java
+  shell: |
+    source "$HOME/.sdkman/bin/sdkman-init.sh"
+    sdk install java {{ java_version }}
+  args:
+    executable: /bin/bash
   tags:
     - java
