@@ -8,6 +8,7 @@
     - dotfiles
     - cifs-utils
     - dos2unix
+    - fzf
     - ghq
     - graphviz
     - gron
