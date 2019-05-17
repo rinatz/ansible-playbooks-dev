@@ -1,4 +1,0 @@
----
-
-anyenv_root: "{{ ansible_env.HOME }}/.anyenv"
-ruby_version: 2.5.0
