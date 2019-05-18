@@ -37,6 +37,7 @@
       - libreadline-dev
       - libsqlite3-dev
       - libssl-dev
+      - libtool-bin
       - libwebp-dev
       - libxml2-dev
       - libxslt-dev
@@ -47,17 +48,5 @@
       - xz-utils
       - zlib1g-dev
       - libmysqlclient-dev
-  tags:
-    - buildpack
-
-- name: install packages
-  become: yes
-  apt:
-    state: present
-    update_cache: yes
-    cache_valid_time: 3600
-    name:
-      - libtool-bin
-  when: ansible_distribution_major_version|int >= 16
   tags:
     - buildpack

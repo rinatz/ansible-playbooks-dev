@@ -1,17 +1,10 @@
 ---
 
-- name: add repository
-  become: yes
-  apt_repository:
-    repo: ppa:ubuntu-toolchain-r/test
-    state: present
-  when: ansible_distribution_release == "trusty"
-  tags:
-    - llvm
-
 - name: add apt key
   become: yes
-  shell: curl -fsSL https://apt.llvm.org/llvm-snapshot.gpg.key | apt-key add -
+  apt_key:
+    url: https://apt.llvm.org/llvm-snapshot.gpg.key
+    state: present
   tags:
     - llvm
 

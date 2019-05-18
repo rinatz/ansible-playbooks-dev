@@ -1,21 +1,10 @@
 ---
 
-- name: install packages
-  become: yes
-  apt:
-    state: present
-    update_cache: yes
-    cache_valid_time: 3600
-    name:
-      - linux-image-extra-{{ ansible_kernel }}
-      - linux-image-extra-virtual
-  when: ansible_distribution_release == "trusty"
-  tags:
-    - docker
-
 - name: add apt key
   become: yes
-  shell: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
   tags:
     - docker
 
