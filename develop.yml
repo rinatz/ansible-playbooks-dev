@@ -24,6 +24,7 @@
     - llvm
     - ninja
     - gdb
+    - stow
     - valgrind
     - anyenv
     - python
