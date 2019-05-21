@@ -18,6 +18,7 @@
     - osquery
     - caddy
     - cmake
+    - qmake
     - doxygen
     - docker
     - fcgi

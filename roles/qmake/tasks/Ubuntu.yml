@@ -1,0 +1,11 @@
+---
+
+- name: install qt
+  become: yes
+  apt:
+    name: qt5-default
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+  tags:
+    - qmake
