@@ -1,12 +1,5 @@
 ---
 
-- name: set timezone
-  become: yes
-  timezone:
-    name: Asia/Tokyo
-  tags:
-    - setup
-
 - name: change ubuntu repository url
   become: yes
   replace:
@@ -21,7 +14,38 @@
   apt:
     state: latest
     update_cache: yes
-    force_apt_get: yes
     name: "*"
+  tags:
+    - setup
+
+- name: dist-upgrade packages
+  become: yes
+  apt:
+    upgrade: dist
+    update_cache: yes
+    cache_valid_time: 3600
+  tags:
+    - setup
+
+- name: install language-pack-ja
+  become: yes
+  apt:
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+    name: language-pack-ja
+  tags:
+    - setup
+
+- name: set locale
+  become: yes
+  shell: localectl set-locale LANG=ja_JP.UTF-8
+  tags:
+    - setup
+
+- name: set timezone
+  become: yes
+  timezone:
+    name: Asia/Tokyo
   tags:
     - setup
