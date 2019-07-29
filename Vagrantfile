@@ -5,6 +5,12 @@ Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-16.04"
   config.vm.network "private_network", type: "dhcp"
 
+  if Vagrant::Util::Platform.windows? then
+    config.vm.synced_folder "#{ENV['USERPROFILE']}", "/mnt/vagrant"
+  else
+    config.vm.synced_folder "~", "/mnt/vagrant"
+  end
+
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "4096"
     vb.cpus = 2
