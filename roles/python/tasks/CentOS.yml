@@ -1,0 +1,20 @@
+---
+
+- name: install packages
+  become: yes
+  yum:
+    name:
+      - bzip2-devel
+      - gdbm-devel
+      - libffi-devel
+      - libuuid-devel
+      - ncurses-devel
+      - openssl-devel
+      - readline-devel
+      - sqlite-devel
+      - tk-devel
+      - wget
+      - xz-devel
+      - zlib-devel
+  tags:
+    - python

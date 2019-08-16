@@ -6,5 +6,7 @@
     state: present
     name:
       - "@Development Tools"
+    exclude:
+      - git
   tags:
     - buildpack

@@ -10,6 +10,7 @@
     - cmake
 
 - name: symlink
+  become: yes
   file:
     src: /usr/bin/cmake3
     dest: /usr/local/bin/cmake
