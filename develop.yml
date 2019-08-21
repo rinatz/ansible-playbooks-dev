@@ -5,6 +5,7 @@
     - setup
     - scm
     - buildpack
+    - stow
     - dotfiles
     - cifs-utils
     - direnv
@@ -26,7 +27,6 @@
     - llvm
     - ninja
     - gdb
-    - stow
     - valgrind
     - anyenv
     - python

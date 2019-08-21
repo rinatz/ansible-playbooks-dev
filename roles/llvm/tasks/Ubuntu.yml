@@ -1,33 +1,18 @@
 ---
 
-- name: add apt key
+- name: download
   become: yes
-  apt_key:
-    url: https://apt.llvm.org/llvm-snapshot.gpg.key
-    state: present
+  unarchive:
+    src: http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz
+    dest: /usr/local/stow
+    remote_src: yes
   tags:
     - llvm
 
-- name: add repository
+- name: stow
   become: yes
-  apt_repository:
-    repo: "deb http://apt.llvm.org/{{ ansible_distribution_release }}/ llvm-toolchain-{{ ansible_distribution_release }} main"
-    filename: llvm
-    state: present
-  tags:
-    - llvm
-
-- name: install packages
-  become: yes
-  apt:
-    state: present
-    update_cache: yes
-    cache_valid_time: 3600
-    name:
-      - clang
-      - clang-format
-      - libclang-dev
-      - lldb
-      - llvm-dev
+  shell: stow clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-16.04
+  args:
+    chdir: /usr/local/stow
   tags:
     - llvm
