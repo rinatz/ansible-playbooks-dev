@@ -1,10 +1,10 @@
 ---
 
-- name: install libxml2-devel
+- name: install libxml2
   become: yes
   yum:
     state: present
     name:
-      - libxml2-devel
+      - libxml2
   tags:
     - libxml
