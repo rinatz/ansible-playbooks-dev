@@ -21,4 +21,4 @@
       - uuid-dev
       - tk-dev
   tags:
-  - python
+    - python
