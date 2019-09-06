@@ -1,22 +1,14 @@
 ---
 
-- name: add yum repositories
-  become: yes
-  yum:
-    state: present
-    name:
-      - epel-release
-      - centos-release-scl
-      - https://centos7.iuscommunity.org/ius-release.rpm
-  tags:
-    - setup
-
-- name: install yum-utils
+- name: configure yum
   become: yes
   yum:
     state: present
     name:
       - yum-utils
+      - epel-release
+      - centos-release-scl
+      - https://centos7.iuscommunity.org/ius-release.rpm
   tags:
     - setup
 
