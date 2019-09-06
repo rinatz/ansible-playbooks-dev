@@ -1,6 +1,6 @@
 ---
 
-- name: change ubuntu repository url
+- name: configure apt
   become: yes
   replace:
     dest: /etc/apt/sources.list
