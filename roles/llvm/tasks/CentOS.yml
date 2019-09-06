@@ -8,3 +8,12 @@
       - llvm-toolset-7
   tags:
     - llvm
+
+- name: enable packages
+  become: yes
+  lineinfile:
+    path: /etc/profile.d/llvm.sh
+    line: . scl_source enable llvm-toolset-7
+    create: yes
+  tags:
+    - llvm
