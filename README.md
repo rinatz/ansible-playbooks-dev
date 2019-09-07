@@ -18,7 +18,7 @@ $ git clone https://github.com/rinatz/playbooks
 - [Remote Development] (VSCode extension)
 - [Docker]
 
-### Provisoning
+#### Provisoning
 
 1. Run Visual Studio Code.
 1. Open this repository cloned locally.
@@ -34,7 +34,7 @@ $ git clone https://github.com/rinatz/playbooks
 - [VirtualBox]
 - [vagrant-vbguest]
 
-### Provisoning
+#### Provisoning
 
 1. Run below commands.
 
