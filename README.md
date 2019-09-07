@@ -18,6 +18,8 @@ $ git clone https://github.com/rinatz/playbooks
 - [Remote Development] (VSCode extension)
 - [Docker]
 
+### Provisoning
+
 1. Run Visual Studio Code.
 1. Open this repository cloned locally.
 1. Select `Remote-Containers: Reopen in Container` from command parlette.
@@ -31,6 +33,8 @@ $ git clone https://github.com/rinatz/playbooks
 - [Vagrant]
 - [VirtualBox]
 - [vagrant-vbguest]
+
+### Provisoning
 
 1. Run below commands.
 
