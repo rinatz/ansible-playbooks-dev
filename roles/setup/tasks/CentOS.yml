@@ -19,16 +19,3 @@
     name: "*"
   tags:
     - setup
-
-- name: set locale
-  become: yes
-  shell: localectl set-locale LANG=ja_JP.UTF-8
-  tags:
-    - setup
-
-- name: set timezone
-  become: yes
-  timezone:
-    name: Asia/Tokyo
-  tags:
-    - setup
