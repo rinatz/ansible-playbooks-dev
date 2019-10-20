@@ -28,7 +28,6 @@
     - ninja
     - gdb
     - valgrind
-    - anyenv
     - python
     - rust
     - i18n
