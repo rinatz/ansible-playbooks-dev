@@ -1,4 +1,4 @@
 ---
 
-anyenv_root: "{{ ansible_env.HOME }}/.anyenv"
+pyenv_root: "{{ ansible_env.HOME }}/.pyenv"
 python_version: 3.6.8

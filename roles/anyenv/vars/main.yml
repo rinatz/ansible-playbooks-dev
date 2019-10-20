@@ -1,3 +1,0 @@
----
-
-anyenv_root: "{{ ansible_env.HOME }}/.anyenv"

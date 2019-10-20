@@ -5,22 +5,20 @@
     - python
 
 - name: install pyenv
-  shell: |
-    eval "$(anyenv init -)"
-    anyenv install -s pyenv
-  environment:
-    PATH: "{{ anyenv_root }}/bin:{{ ansible_env.PATH }}"
+  git:
+    repo: https://github.com/pyenv/pyenv.git
+    dest: "{{ pyenv_root }}"
   tags:
     - python
 
 - name: install python
   shell: |
-    eval "$(anyenv init -)"
+    eval "$(pyenv init -)"
     pyenv install -s {{ python_version }}
     pyenv global {{ python_version }}
     pip install pipenv
   environment:
     CONFIGURE_OPTS: --enable-shared
-    PATH: "{{ anyenv_root }}/bin:{{ ansible_env.PATH }}"
+    PATH: "{{ pyenv_root }}/bin:{{ ansible_env.PATH }}"
   tags:
     - python
