@@ -14,6 +14,7 @@
     - ghq
     - graphviz
     - gron
+    - jid
     - jq
     - libxml
     - nkf
