@@ -1,0 +1,10 @@
+---
+
+- name: install httpd
+  become: yes
+  yum:
+    state: present
+    name:
+      - httpd
+  tags:
+    - httpd
