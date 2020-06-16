@@ -18,7 +18,7 @@
 - name: copy
   become: yes
   copy:
-    src: "{{ temp.path }}/ghq"
+    src: "{{ temp.path }}/ghq_linux_amd64/ghq"
     dest: /usr/local/bin
     mode: +x
     remote_src: yes
