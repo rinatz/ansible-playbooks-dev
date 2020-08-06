@@ -3,6 +3,15 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/centos-7"
+
+  #
+  # Warning
+  #
+  # This feature is experimental.
+  # See: https://www.vagrantup.com/docs/disks/usage
+  #
+  # config.vm.disk :disk, size: "200GB", primary: true
+
   config.vm.network "private_network", type: "dhcp"
 
   if Vagrant::Util::Platform.windows? then
