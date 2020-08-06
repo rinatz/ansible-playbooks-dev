@@ -4,14 +4,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/centos-7"
 
-  #
-  # Warning
-  #
-  # This feature is experimental.
-  # See: https://www.vagrantup.com/docs/disks/usage
-  #
-  # config.vm.disk :disk, size: "200GB", primary: true
-
   config.vm.network "private_network", type: "dhcp"
 
   if Vagrant::Util::Platform.windows? then
@@ -25,7 +17,18 @@ Vagrant.configure("2") do |config|
     vb.cpus = 2
   end
 
+  #
+  # Warning
+  #
+  # This feature is experimental.
+  # See: https://www.vagrantup.com/docs/disks/usage
+  #
+  # config.vm.disk :disk, size: "200GB", primary: true
+
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "site.yml"
+
+    # Comment out for using the experimental feature of "disks".
+    ansible.skip_tags = ["disk"]
   end
 end

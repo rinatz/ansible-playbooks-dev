@@ -19,7 +19,7 @@
     number: 3
     flags:
       - lvm
-    part_start: "{{ sda_info.partitions[1].end }}KiB"
+    part_start: "{{ sda_info.partitions[-1].end }}KiB"
   tags:
     - disk
 
