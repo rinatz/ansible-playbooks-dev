@@ -28,7 +28,8 @@ Vagrant.configure("2") do |config|
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "site.yml"
 
-    # Comment out for using the experimental feature of "disks".
-    ansible.skip_tags = ["disk"]
+    if ENV.has_key?("VAGRANT_EXPERIMENTAL") then
+      ansible.tags = ["all", "experimental"]
+    end
   end
 end

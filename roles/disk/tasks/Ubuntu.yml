@@ -9,6 +9,8 @@
   register: sda_info
   tags:
     - disk
+    - never
+    - experimental
 
 - name: create partition
   become: yes
@@ -22,6 +24,8 @@
     part_start: "{{ sda_info.partitions[-1].end }}KiB"
   tags:
     - disk
+    - never
+    - experimental
 
 - name: create a volume group
   become: yes
@@ -30,6 +34,8 @@
     pvs: /dev/sda1,/dev/sda2
   tags:
     - disk
+    - never
+    - experimental
 
 - name: resize logical volume
   become: yes
@@ -40,6 +46,8 @@
     size: +100%FREE
   tags:
     - disk
+    - never
+    - experimental
 
 - name: resize filesystem
   become: yes
@@ -49,3 +57,5 @@
     resizefs: yes
   tags:
     - disk
+    - never
+    - experimental
