@@ -9,7 +9,7 @@
 
 - name: download
   unarchive:
-    src: "https://github.com/mholt/caddy/releases/download/v{{ caddy_version }}/caddy_v{{ caddy_version }}_linux_amd64.tar.gz"
+    src: "https://github.com/caddyserver/caddy/releases/download/v{{ caddy_version }}/caddy_{{ caddy_version }}_linux_amd64.tar.gz"
     dest: "{{ temp.path }}"
     remote_src: yes
   tags:
