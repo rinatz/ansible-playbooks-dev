@@ -1,0 +1,15 @@
+---
+
+- name: configure yum
+  become: yes
+  shell: amazon-linux-extras install epel
+  tags:
+    - setup
+
+- name: update packages
+  become: yes
+  yum:
+    state: latest
+    name: "*"
+  tags:
+    - setup

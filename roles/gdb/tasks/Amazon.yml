@@ -1,0 +1,10 @@
+---
+
+- name: install gdb
+  become: yes
+  yum:
+    state: present
+    name:
+      - gdb
+  tags:
+    - gdb
