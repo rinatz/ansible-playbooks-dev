@@ -1,0 +1,5 @@
+---
+
+- name: debug
+  debug:
+    msg: Nothing to do
