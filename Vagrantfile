@@ -25,6 +25,15 @@ Vagrant.configure("2") do |config|
   #
   # config.vm.disk :disk, size: "200GB", primary: true
 
+  config.vm.provision "shell", inline: <<-SHELL
+    # Ansible Local Provisioner cannot install Ansible in Amazon Linux.
+    if type amazon-linux-extras >&/dev/null; then
+      amazon-linux-extras enable ansible2
+      yum clean metadata
+      yum install -y ansible
+    fi
+  SHELL
+
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "site.yml"
     ansible.install_mode = "pip"
