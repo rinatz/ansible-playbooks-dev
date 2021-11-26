@@ -33,4 +33,5 @@
     - python
     - rust
     - i18n
+    - starship
     - disk

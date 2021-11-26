@@ -1,0 +1,7 @@
+---
+
+- name: install starship
+  become: yes
+  shell: curl -fsSL https://starship.rs/install.sh | bash -s -- -y
+  tags:
+    - starship
