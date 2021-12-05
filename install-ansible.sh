@@ -1,10 +1,14 @@
 #!/bin/bash
 set -eu
 
-readonly DISTRIBUTORS=("CentOS" "Amazon Linux" "Ubuntu")
+readonly DISTRIBUTIONS=(
+    "Amazon"
+    "CentOS"
+    "Ubuntu"
+)
 
-function distributor() {
-    for name in "${DISTRIBUTORS[@]}"; do
+function distribution() {
+    for name in "${DISTRIBUTIONS[@]}"; do
         if grep "${name}" /etc/os-release &>/dev/null; then
             echo "${name}"
         fi
@@ -30,9 +34,9 @@ function install_ansible_on_ubuntu() {
 }
 
 function install_ansible() {
-    case "$(distributor)" in
+    case "$(distribution)" in
     "CentOS") install_ansible_on_centos ;;
-    "Amazon Linux") install_ansible_on_amazonlinux ;;
+    "Amazon") install_ansible_on_amazonlinux ;;
     "Ubuntu") install_ansible_on_ubuntu ;;
     esac
 }
