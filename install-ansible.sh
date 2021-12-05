@@ -20,7 +20,7 @@ function install_ansible_on_centos() {
     sudo yum install -y ansible
 }
 
-function install_ansible_on_amazonlinux() {
+function install_ansible_on_amazon() {
     sudo amazon-linux-extras enable ansible2
     sudo yum clean metadata
     sudo yum install -y ansible
@@ -36,7 +36,7 @@ function install_ansible_on_ubuntu() {
 function install_ansible() {
     case "$(distribution)" in
     "CentOS") install_ansible_on_centos ;;
-    "Amazon") install_ansible_on_amazonlinux ;;
+    "Amazon") install_ansible_on_amazon ;;
     "Ubuntu") install_ansible_on_ubuntu ;;
     esac
 }

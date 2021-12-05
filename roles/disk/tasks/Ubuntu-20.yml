@@ -18,7 +18,7 @@
     device: /dev/sda
     state: present
     unit: KiB
-    number: 2
+    number: 3
     flags:
       - lvm
     part_start: "{{ sda_info.partitions[-1].end }}KiB"
@@ -30,8 +30,8 @@
 - name: create a volume group
   become: yes
   lvg:
-    vg: vagrant-vg
-    pvs: /dev/sda1,/dev/sda2
+    vg: vgvagrant
+    pvs: /dev/sda3,/dev/sda5
   tags:
     - disk
     - never
@@ -40,21 +40,10 @@
 - name: resize logical volume
   become: yes
   lvol:
-    vg: vagrant-vg
+    vg: vgvagrant
     lv: root
     resizefs: yes
     size: +100%FREE
-  tags:
-    - disk
-    - never
-    - experimental
-
-- name: resize filesystem
-  become: yes
-  filesystem:
-    fstype: ext4
-    dev: /dev/mapper/vagrant--vg-root
-    resizefs: yes
   tags:
     - disk
     - never
