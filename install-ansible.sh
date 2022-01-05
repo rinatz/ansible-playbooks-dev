@@ -7,6 +7,11 @@ readonly DISTRIBUTIONS=(
     "Ubuntu"
 )
 
+function fatal() {
+    printf "\e[31m\e[1mFATAL\e[0m %s\n" "$*" >&2
+    exit 1
+}
+
 function distribution() {
     for name in "${DISTRIBUTIONS[@]}"; do
         if grep "${name}" /etc/os-release &>/dev/null; then
@@ -38,6 +43,7 @@ function install_ansible() {
     "CentOS") install_ansible_on_centos ;;
     "Amazon") install_ansible_on_amazon ;;
     "Ubuntu") install_ansible_on_ubuntu ;;
+    *) fatal "This platform is not supported - Supported platforms: ${DISTRIBUTIONS[*]}" ;;
     esac
 }
 
