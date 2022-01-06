@@ -7,7 +7,7 @@
   tags:
     - caddy
 
-- name: download arm64
+- name: "[arm64] download"
   unarchive:
     src: "https://github.com/caddyserver/caddy/releases/download/v{{ caddy_version }}/caddy_{{ caddy_version }}_linux_arm64.tar.gz"
     dest: "{{ temp.path }}"
@@ -17,7 +17,7 @@
   tags:
     - caddy
 
-- name: download amd64
+- name: "[amd64] download"
   unarchive:
     src: "https://github.com/caddyserver/caddy/releases/download/v{{ caddy_version }}/caddy_{{ caddy_version }}_linux_amd64.tar.gz"
     dest: "{{ temp.path }}"

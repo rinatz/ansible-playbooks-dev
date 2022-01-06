@@ -1,6 +1,6 @@
 ---
 
-- name: install jid
+- name: "[arm64] install jid"
   become: yes
   unarchive:
     src: https://github.com/simeji/jid/releases/download/v{{ jid_version }}/jid_linux_arm64.zip
@@ -12,7 +12,7 @@
   tags:
     - jid
 
-- name: install jid
+- name: "[amd64] install jid"
   become: yes
   unarchive:
     src: https://github.com/simeji/jid/releases/download/v{{ jid_version }}/jid_linux_amd64.zip
