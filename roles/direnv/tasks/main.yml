@@ -1,6 +1,6 @@
 ---
 
-- name: install direnv arm64
+- name: "[arm64] install direnv"
   become: yes
   get_url:
     url: https://github.com/direnv/direnv/releases/download/v{{ direnv_version }}/direnv.linux-arm64
@@ -11,7 +11,7 @@
   tags:
     - direnv
 
-- name: install direnv amd64
+- name: "[amd64] install direnv"
   become: yes
   get_url:
     url: https://github.com/direnv/direnv/releases/download/v{{ direnv_version }}/direnv.linux-amd64
