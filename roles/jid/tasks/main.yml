@@ -3,9 +3,23 @@
 - name: install jid
   become: yes
   unarchive:
+    src: https://github.com/simeji/jid/releases/download/v{{ jid_version }}/jid_linux_arm64.zip
+    dest: /usr/local/bin
+    remote_src: yes
+    mode: 0755
+  when:
+    ansible_architecture == "aarch64"
+  tags:
+    - jid
+
+- name: install jid
+  become: yes
+  unarchive:
     src: https://github.com/simeji/jid/releases/download/v{{ jid_version }}/jid_linux_amd64.zip
     dest: /usr/local/bin
     remote_src: yes
     mode: 0755
+  when:
+    ansible_architecture == "x86_64"
   tags:
     - jid
