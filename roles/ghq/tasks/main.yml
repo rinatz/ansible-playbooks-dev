@@ -4,14 +4,18 @@
   tempfile:
     state: directory
   register: temp
+  when:
+    ansible_architecture == "x86_64"
   tags:
     - ghq
 
 - name: download
   unarchive:
-    src: "https://github.com/motemen/ghq/releases/download/v{{ ghq_version }}/ghq_linux_amd64.zip"
+    src: "https://github.com/x-motemen/ghq/releases/download/v{{ ghq_version }}/ghq_linux_amd64.zip"
     dest: "{{ temp.path }}"
     remote_src: yes
+  when:
+    ansible_architecture == "x86_64"
   tags:
     - ghq
 
@@ -22,6 +26,8 @@
     dest: /usr/local/bin
     mode: +x
     remote_src: yes
+  when:
+    ansible_architecture == "x86_64"
   tags:
     - ghq
 
@@ -29,5 +35,7 @@
   file:
     path: "{{ temp.path }}"
     state: absent
+  when:
+    ansible_architecture == "x86_64"
   tags:
     - ghq
