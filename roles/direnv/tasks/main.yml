@@ -1,10 +1,23 @@
 ---
 
-- name: install direnv
+- name: install direnv arm64
+  become: yes
+  get_url:
+    url: https://github.com/direnv/direnv/releases/download/v{{ direnv_version }}/direnv.linux-arm64
+    dest: /usr/local/bin/direnv
+    mode: 0755
+  when:
+    ansible_architecture == "aarch64"
+  tags:
+    - direnv
+
+- name: install direnv amd64
   become: yes
   get_url:
     url: https://github.com/direnv/direnv/releases/download/v{{ direnv_version }}/direnv.linux-amd64
     dest: /usr/local/bin/direnv
     mode: 0755
+  when:
+    ansible_architecture == "x86_64"
   tags:
     - direnv
