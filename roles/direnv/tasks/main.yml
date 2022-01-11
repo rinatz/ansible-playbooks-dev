@@ -6,8 +6,7 @@
     url: https://github.com/direnv/direnv/releases/download/v{{ direnv_version }}/direnv.linux-arm64
     dest: /usr/local/bin/direnv
     mode: 0755
-  when:
-    ansible_architecture == "aarch64"
+  when: ansible_architecture == "aarch64"
   tags:
     - direnv
 
@@ -17,7 +16,6 @@
     url: https://github.com/direnv/direnv/releases/download/v{{ direnv_version }}/direnv.linux-amd64
     dest: /usr/local/bin/direnv
     mode: 0755
-  when:
-    ansible_architecture == "x86_64"
+  when: ansible_architecture == "x86_64"
   tags:
     - direnv
