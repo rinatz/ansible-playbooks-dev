@@ -7,11 +7,21 @@
   tags:
     - caddy
 
-- name: download
+- name: "[arm64] download"
+  unarchive:
+    src: "https://github.com/caddyserver/caddy/releases/download/v{{ caddy_version }}/caddy_{{ caddy_version }}_linux_arm64.tar.gz"
+    dest: "{{ temp.path }}"
+    remote_src: yes
+  when: ansible_architecture == "aarch64"
+  tags:
+    - caddy
+
+- name: "[amd64] download"
   unarchive:
     src: "https://github.com/caddyserver/caddy/releases/download/v{{ caddy_version }}/caddy_{{ caddy_version }}_linux_amd64.tar.gz"
     dest: "{{ temp.path }}"
     remote_src: yes
+  when: ansible_architecture == "x86_64"
   tags:
     - caddy
 

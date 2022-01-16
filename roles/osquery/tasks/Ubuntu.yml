@@ -11,7 +11,7 @@
 - name: add apt respository
   become: yes
   apt_repository:
-    repo: deb [arch=amd64] https://pkg.osquery.io/deb deb main
+    repo: deb https://pkg.osquery.io/deb deb main
     filename: osquery
     state: present
   tags:
