@@ -1,23 +1,15 @@
 #!/bin/bash
 set -eu
 
-readonly DISTRIBUTIONS=(
-    "Amazon"
-    "CentOS"
-    "Ubuntu"
-)
+#
+# Load 'NAME' environment variable
+#
+# shellcheck disable=SC1091
+[[ -f "/etc/os-release" ]] && source "/etc/os-release"
 
 function fatal() {
     printf "\e[31m\e[1mFATAL\e[0m %s\n" "$*" >&2
     exit 1
-}
-
-function distribution() {
-    for name in "${DISTRIBUTIONS[@]}"; do
-        if grep "${name}" /etc/os-release &>/dev/null; then
-            echo "${name}"
-        fi
-    done
 }
 
 function install_ansible_on_centos() {
@@ -39,7 +31,9 @@ function install_ansible_on_ubuntu() {
 }
 
 function install_ansible() {
-    case "$(distribution)" in
+    local name="${NAME:-}"
+
+    case "${name}" in
     "CentOS") install_ansible_on_centos ;;
     "Amazon") install_ansible_on_amazon ;;
     "Ubuntu") install_ansible_on_ubuntu ;;
