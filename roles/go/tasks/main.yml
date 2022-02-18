@@ -1,0 +1,29 @@
+---
+
+- name: "[x86_64] download"
+  become: yes
+  unarchive:
+    src: "https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz"
+    dest: /usr/local/stow
+    remote_src: yes
+  when: ansible_architecture == "x86_64"
+  tags:
+    - go
+
+- name: "[amd64] download"
+  become: yes
+  unarchive:
+    src: "https://go.dev/dl/go{{ go_version }}.linux-arm64.tar.gz"
+    dest: /usr/local/stow
+    remote_src: yes
+  when: ansible_architecture == "aarch64"
+  tags:
+    - go
+
+- name: stow
+  become: yes
+  shell: stow go
+  args:
+    chdir: /usr/local/stow
+  tags:
+    - go
