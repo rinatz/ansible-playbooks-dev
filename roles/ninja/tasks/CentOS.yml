@@ -1,11 +1,12 @@
 ---
 
-- name: install ninja
+- name: "[x86_64] install ninja"
   become: yes
   unarchive:
     src: https://github.com/ninja-build/ninja/releases/download/v{{ ninja_version }}/ninja-linux.zip
     dest: /usr/local/bin
     remote_src: yes
     mode: 0755
+  when: ansible_architecture == "x86_64"
   tags:
     - ninja
