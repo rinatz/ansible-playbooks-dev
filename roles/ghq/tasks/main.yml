@@ -8,7 +8,7 @@
   tags:
     - ghq
 
-- name: download
+- name: "[x86_64] download"
   unarchive:
     src: "https://github.com/x-motemen/ghq/releases/download/v{{ ghq_version }}/ghq_linux_amd64.zip"
     dest: "{{ temp.path }}"
