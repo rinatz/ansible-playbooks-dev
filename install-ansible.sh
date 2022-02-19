@@ -7,6 +7,8 @@ set -eu
 # shellcheck disable=SC1091
 [[ -f "/etc/os-release" ]] && source "/etc/os-release"
 
+readonly DISTRIBUTION="${NAME:-}"
+
 function fatal() {
     printf "\e[31m\e[1mFATAL\e[0m %s\n" "$*" >&2
     exit 1
@@ -31,9 +33,7 @@ function install_ansible_on_ubuntu() {
 }
 
 function install_ansible() {
-    local name="${NAME:-}"
-
-    case "${name}" in
+    case "${DISTRIBUTION}" in
     "CentOS") install_ansible_on_centos ;;
     "Amazon") install_ansible_on_amazon ;;
     "Ubuntu") install_ansible_on_ubuntu ;;
