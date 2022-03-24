@@ -39,12 +39,3 @@
     enabled: yes
   tags:
     - docker
-
-- name: download docker-compose
-  become: yes
-  get_url:
-    url: https://github.com/docker/compose/releases/download/v{{ compose_version }}/docker-compose-{{ ansible_system | lower }}-{{ ansible_machine }}
-    dest: /usr/local/bin/docker-compose
-    mode: 0755
-  tags:
-    - docker
