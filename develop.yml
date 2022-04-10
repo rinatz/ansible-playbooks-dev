@@ -6,7 +6,9 @@
     - scm
     - buildpack
     - stow
-    - dotfiles
+    - python
+    - rust
+    - go
     - cifs-utils
     - direnv
     - dos2unix
@@ -30,9 +32,7 @@
     - ninja
     - gdb
     - valgrind
-    - python
-    - rust
-    - go
     - i18n
     - starship
     - disk
+    - dotfiles
