@@ -1,20 +1,11 @@
 ---
 
-- name: "[x86_64] download"
+- name: install packages
   become: yes
-  unarchive:
-    src: http://releases.llvm.org/8.0.0/clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-16.04.tar.xz
-    dest: /usr/local/stow
-    remote_src: yes
-  when: ansible_architecture == "x86_64"
-  tags:
-    - llvm
-
-- name: "[x86_64] stow"
-  become: yes
-  shell: stow clang+llvm-8.0.0-x86_64-linux-gnu-ubuntu-16.04
-  args:
-    chdir: /usr/local/stow
-  when: ansible_architecture == "x86_64"
+  apt:
+    state: present
+    name:
+      - clang
+      - clang-format
   tags:
     - llvm
