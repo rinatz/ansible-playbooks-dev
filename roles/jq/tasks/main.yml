@@ -1,11 +1,5 @@
 ---
 
-- name: "[x86_64] download jq"
-  become: yes
-  get_url:
-    url: https://github.com/stedolan/jq/releases/download/jq-{{ jq_version }}/jq-linux64
-    dest: /usr/local/bin/jq
-    mode: 0755
-  when: ansible_architecture == "x86_64"
+- include_tasks: "{{ ansible_architecture }}.yml"
   tags:
     - jq

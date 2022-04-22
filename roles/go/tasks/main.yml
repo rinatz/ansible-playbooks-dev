@@ -1,22 +1,6 @@
 ---
 
-- name: "[x86_64] download"
-  become: yes
-  unarchive:
-    src: "https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz"
-    dest: /usr/local/stow
-    remote_src: yes
-  when: ansible_architecture == "x86_64"
-  tags:
-    - go
-
-- name: "[amd64] download"
-  become: yes
-  unarchive:
-    src: "https://go.dev/dl/go{{ go_version }}.linux-arm64.tar.gz"
-    dest: /usr/local/stow
-    remote_src: yes
-  when: ansible_architecture == "aarch64"
+- include_tasks: "{{ ansible_architecture }}.yml"
   tags:
     - go
 

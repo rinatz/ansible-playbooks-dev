@@ -24,9 +24,9 @@ $ git clone https://github.com/rinatz/playbooks
 必要に応じて `Vagrantfile` を編集して box イメージを変更してください。
 動作確認済みの box イメージは次のとおりです。
 
-- `bento/centos-7`
 - `bento/amazonlinux-2`
-- `bento/ubuntu-16.04`
+- `bento/centos-7`
+- `bento/ubuntu-20.04`
 
 ホスト OS とのマウント先を変更したければ下記を変更してください。
 

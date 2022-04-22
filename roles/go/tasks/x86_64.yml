@@ -1,0 +1,10 @@
+---
+
+- name: "download"
+  become: yes
+  unarchive:
+    src: "https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz"
+    dest: /usr/local/stow
+    remote_src: yes
+  tags:
+    - go
