@@ -6,6 +6,7 @@
     - scm
     - buildpack
     - stow
+    - ccache
     - python
     - rust
     - go
@@ -36,4 +37,3 @@
     - starship
     - disk
     - dotfiles
-    - ccache
