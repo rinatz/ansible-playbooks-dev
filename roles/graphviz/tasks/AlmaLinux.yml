@@ -1,0 +1,10 @@
+---
+
+- name: install graphviz
+  become: yes
+  yum:
+    state: present
+    name:
+      - graphviz
+  tags:
+    - graphviz

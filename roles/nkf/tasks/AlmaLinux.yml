@@ -1,0 +1,11 @@
+---
+
+- name: install nkf
+  become: yes
+  yum:
+    state: present
+    enablerepo: powertools
+    name:
+      - nkf
+  tags:
+    - nkf

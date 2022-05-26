@@ -1,0 +1,11 @@
+---
+
+- name: install ninja
+  become: yes
+  yum:
+    state: present
+    enablerepo: powertools
+    name:
+      - ninja-build
+  tags:
+    - ninja

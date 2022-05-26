@@ -1,0 +1,10 @@
+---
+
+- name: install cifs-utils
+  become: yes
+  yum:
+    state: present
+    name:
+      - cifs-utils
+  tags:
+    - cifs-utils

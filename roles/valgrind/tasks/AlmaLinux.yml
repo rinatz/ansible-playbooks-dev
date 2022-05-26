@@ -1,0 +1,10 @@
+---
+
+- name: install valgrind
+  become: yes
+  yum:
+    state: present
+    name:
+      - valgrind
+  tags:
+    - valgrind

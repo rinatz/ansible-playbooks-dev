@@ -35,6 +35,7 @@ function install_ansible_on_ubuntu() {
 function install_ansible() {
     case "${DISTRIBUTION}" in
     "CentOS Linux") install_ansible_on_centos ;;
+    "AlmaLinux") install_ansible_on_centos ;;
     "Amazon Linux") install_ansible_on_amazon ;;
     "Ubuntu") install_ansible_on_ubuntu ;;
     *) fatal "This platform is not supported" ;;

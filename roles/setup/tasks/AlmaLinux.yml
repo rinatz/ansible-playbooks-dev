@@ -1,0 +1,19 @@
+---
+
+- name: configure yum
+  become: yes
+  yum:
+    state: present
+    name:
+      - yum-utils
+      - epel-release
+  tags:
+    - setup
+
+- name: update packages
+  become: yes
+  yum:
+    state: latest
+    name: "*"
+  tags:
+    - setup
