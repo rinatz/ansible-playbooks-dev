@@ -13,7 +13,7 @@
   tags:
     - setup
 
-- name: update packages
+- name: update packages   # noqa package-latest
   become: yes
   yum:
     state: latest

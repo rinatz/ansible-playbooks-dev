@@ -10,7 +10,9 @@
 
 - name: add yum repository
   become: yes
-  shell: yum-config-manager --add-repo https://pkg.osquery.io/rpm/osquery-s3-rpm.repo
+  command: yum-config-manager --add-repo https://pkg.osquery.io/rpm/osquery-s3-rpm.repo
+  register: result
+  changed_when: result.rc == 0
   tags:
     - osquery
 

@@ -2,8 +2,12 @@
 
 - name: install starship
   become: yes
-  shell: curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+  shell: |
+    set -o pipefail
+    curl -fsSL https://starship.rs/install.sh | sh -s -- -y
   args:
     warn: no
+  register: result
+  changed_when: result.rc == 0
   tags:
     - starship

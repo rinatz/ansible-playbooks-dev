@@ -10,8 +10,12 @@
     - dotfiles
 
 - name: install dotfiles
-  shell: curl -L http://bit.ly/rinatz-dotfiles | bash
+  shell: |
+    set -o pipefail
+    curl -L http://bit.ly/rinatz-dotfiles | bash
   args:
     warn: no
+  register: result
+  changed_when: result.rc == 0
   tags:
     - dotfiles

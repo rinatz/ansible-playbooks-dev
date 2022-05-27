@@ -9,6 +9,7 @@
   file:
     path: /usr/local/libexec/docker/cli-plugins
     state: directory
+    mode: 0755
   tags:
     - docker
 

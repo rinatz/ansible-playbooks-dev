@@ -9,7 +9,7 @@
   tags:
     - setup
 
-- name: upgrade packages
+- name: upgrade packages  # noqa package-latest
   become: yes
   apt:
     state: latest

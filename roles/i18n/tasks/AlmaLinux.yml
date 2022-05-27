@@ -11,7 +11,9 @@
 
 - name: set locale
   become: yes
-  shell: localectl set-locale LANG=ja_JP.UTF-8
+  command: localectl set-locale LANG=ja_JP.UTF-8
+  register: result
+  changed_when: result.rc == 0
   tags:
     - i18n
 

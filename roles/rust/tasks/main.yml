@@ -1,8 +1,12 @@
 ---
 
 - name: install rustup
-  shell: curl -fsSL https://sh.rustup.rs | bash -s -- -y
+  shell: |
+    set -o pipefail
+    curl -fsSL https://sh.rustup.rs | bash -s -- -y
   args:
     warn: no
+  register: result
+  changed_when: result.rc == 0
   tags:
     - rust

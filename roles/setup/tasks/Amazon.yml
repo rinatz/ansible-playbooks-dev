@@ -2,11 +2,13 @@
 
 - name: configure yum
   become: yes
-  shell: amazon-linux-extras install epel
+  command: amazon-linux-extras install epel
+  register: result
+  changed_when: result.rc == 0
   tags:
     - setup
 
-- name: update packages
+- name: update packages   # noqa package-latest
   become: yes
   yum:
     state: latest

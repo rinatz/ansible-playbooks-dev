@@ -29,7 +29,9 @@
 
 - name: add user to docker group
   become: yes
-  shell: usermod -aG docker "{{ ansible_user_id }}"
+  command: usermod -aG docker "{{ ansible_user_id }}"
+  register: result
+  changed_when: result.rc == 0
   tags:
     - docker
 

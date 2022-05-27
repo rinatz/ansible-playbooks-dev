@@ -6,8 +6,10 @@
 
 - name: stow
   become: yes
-  shell: stow go
+  command: stow go
   args:
     chdir: /usr/local/stow
+  register: result
+  changed_when: result.rc == 0
   tags:
     - go
