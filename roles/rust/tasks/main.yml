@@ -5,6 +5,7 @@
     set -o pipefail
     curl -fsSL https://sh.rustup.rs | bash -s -- -y
   args:
+    executable: /bin/bash
     warn: no
   register: result
   changed_when: result.rc == 0
