@@ -1,9 +1,8 @@
 ---
-
 - name: add apt repository
   become: yes
   apt_repository:
-    repo: 'ppa:git-core/ppa'
+    repo: "ppa:git-core/ppa"
   tags:
     - scm
 
@@ -26,6 +25,7 @@
     set -o pipefail
     curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | bash
   args:
+    executable: /bin/bash
     warn: no
   register: result
   changed_when: result.rc == 0
