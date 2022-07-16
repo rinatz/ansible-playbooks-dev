@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   #
   # config.vm.disk :disk, size: "200GB", primary: true
 
-  config.vm.provision "shell", path: "install-ansible.sh"
+  config.vm.provision "shell", path: "ansible-install.sh"
 
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "site.yml"
