@@ -1,0 +1,12 @@
+---
+
+- name: install shellcheck
+  become: yes
+  apt:
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+    name:
+      - shellcheck
+  tags:
+    - shellcheck
