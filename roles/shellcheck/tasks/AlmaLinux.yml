@@ -5,6 +5,6 @@
   yum:
     state: present
     name:
-      - Shellcheck
+      - ShellCheck
   tags:
     - shellcheck
