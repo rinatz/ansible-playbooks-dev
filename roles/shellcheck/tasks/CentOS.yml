@@ -1,0 +1,10 @@
+---
+
+- name: install shellcheck
+  become: yes
+  yum:
+    state: present
+    name:
+      - ShellCheck
+  tags:
+    - shellcheck

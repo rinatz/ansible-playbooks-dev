@@ -35,5 +35,6 @@
     - valgrind
     - i18n
     - starship
+    - shellcheck
     - disk
     - dotfiles
