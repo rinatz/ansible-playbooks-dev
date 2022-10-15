@@ -14,16 +14,6 @@ function fatal() {
     exit 1
 }
 
-function install_ansible_on_centos() {
-    sudo yum install -y epel-release
-    sudo yum install -y ansible
-}
-
-function install_ansible_on_almalinux() {
-    sudo yum install -y epel-release
-    sudo yum install -y ansible
-}
-
 function install_ansible_on_amazon() {
     sudo amazon-linux-extras enable ansible2
     sudo yum clean metadata
@@ -39,8 +29,6 @@ function install_ansible_on_ubuntu() {
 
 function install_ansible() {
     case "${DISTRIBUTION}" in
-    "CentOS Linux") install_ansible_on_centos ;;
-    "AlmaLinux") install_ansible_on_almalinux ;;
     "Amazon Linux") install_ansible_on_amazon ;;
     "Ubuntu") install_ansible_on_ubuntu ;;
     *) fatal "This platform is not supported" ;;

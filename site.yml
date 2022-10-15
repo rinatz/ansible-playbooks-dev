@@ -1,3 +1,25 @@
 ---
 
-- import_playbook: develop.yml
+- hosts: all
+  roles:
+    - setup
+    - scm
+    - buildpack
+    - stow
+    - python
+    - rust
+    - go
+    - direnv
+    - fzf
+    - ghq
+    - jq
+    - libxml
+    - cmake
+    - docker
+    - llvm
+    - gdb
+    - i18n
+    - starship
+    - shellcheck
+    - disk
+    - dotfiles
