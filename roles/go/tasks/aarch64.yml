@@ -8,3 +8,13 @@
     remote_src: yes
   tags:
     - go
+
+- name: stow
+  become: yes
+  command: stow go
+  args:
+    chdir: /usr/local/stow
+  register: result
+  changed_when: result.rc == 0
+  tags:
+    - go
