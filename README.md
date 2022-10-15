@@ -25,7 +25,6 @@ $ git clone https://github.com/rinatz/playbooks
 動作確認済みの box イメージは次のとおりです。
 
 - `bento/amazonlinux-2`
-- `bento/centos-7`
 - `bento/ubuntu-20.04`
 
 ホスト OS とのマウント先を変更したければ下記を変更してください。
@@ -33,10 +32,10 @@ $ git clone https://github.com/rinatz/playbooks
 ```ruby
 if Vagrant::Util::Platform.windows? then
   # ホスト OS が Windows のときの設定
-  config.vm.synced_folder "#{ENV['USERPROFILE']}", "/mnt/vagrant"
+  config.vm.synced_folder ENV['USERPROFILE'].to_s, '/mnt/vagrant'
 else
   # ホスト OS が macOS, Linux のときの設定
-  config.vm.synced_folder "~", "/mnt/vagrant"
+  config.vm.synced_folder '~', '/mnt/vagrant'
 end
 ```
 
@@ -50,13 +49,13 @@ vb.cpus = 2
 ディスク容量を変更したい場合は下記を変更してください。
 
 ```ruby
-config.vm.disk :disk, size: "200GB", primary: true
+config.vm.disk :disk, size: '200GB', primary: true
 ```
 
 ただしディスク容量の変更には Vagrant の試験的機能を使う必要があるため下記の環境変数も合わせて設定してください。
 
 ```bash
-VAGRANT_EXPERIMENTAL=disks
+$ export VAGRANT_EXPERIMENTAL=disks
 ```
 
 `Vagrantfile` の編集が終わったら下記コマンドで仮想環境を構築します。
