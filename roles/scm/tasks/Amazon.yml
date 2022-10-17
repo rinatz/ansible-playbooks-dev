@@ -10,16 +10,3 @@
       - procps-ng
   tags:
     - scm
-
-- name: install git-lfs
-  become: yes
-  shell: |
-    set -o pipefail
-    curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.rpm.sh | bash
-  args:
-    executable: /bin/bash
-    warn: no
-  register: result
-  changed_when: result.rc == 0
-  tags:
-    - scm
