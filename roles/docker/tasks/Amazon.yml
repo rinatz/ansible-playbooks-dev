@@ -24,3 +24,30 @@
     enabled: yes
   tags:
     - docker
+
+- name: create directory
+  become: yes
+  file:
+    path: /usr/local/libexec/docker/cli-plugins
+    state: directory
+    mode: 0755
+  tags:
+    - docker
+
+- name: install compose
+  become: yes
+  get_url:
+    url: https://github.com/docker/compose/releases/download/v{{ compose_version }}/docker-compose-{{ ansible_system | lower }}-{{ ansible_machine }}
+    dest: /usr/local/libexec/docker/cli-plugins/docker-compose
+    mode: 0755
+  tags:
+    - docker
+
+- name: symlink
+  become: yes
+  file:
+    src: /usr/local/libexec/docker/cli-plugins/docker-compose
+    dest: /usr/local/bin/docker-compose
+    state: link
+  tags:
+    - docker
