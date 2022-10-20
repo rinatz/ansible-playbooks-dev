@@ -1,23 +1,7 @@
-
-# Created by https://www.gitignore.io/api/vagrant
-# Edit at https://www.gitignore.io/?templates=vagrant
-
-### Vagrant ###
-# General
-.vagrant/
-
-# Log files (if you are creating logs in debug mode, uncomment this)
-# *.logs
-
-### Vagrant Patch ###
-*.box
-
-# End of https://www.gitignore.io/api/vagrant
-
-# Created by https://www.gitignore.io/api/ansible
-# Edit at https://www.gitignore.io/?templates=ansible
+# Created by https://www.toptal.com/developers/gitignore/api/ansible
+# Edit at https://www.toptal.com/developers/gitignore?templates=ansible
 
 ### Ansible ###
 *.retry
 
-# End of https://www.gitignore.io/api/ansible
+# End of https://www.toptal.com/developers/gitignore/api/ansible
