@@ -1,7 +1,6 @@
 ---
 
 - name: install starship
-  become: yes
   ansible.builtin.shell: |
     set -o pipefail
     curl -fsSL https://starship.rs/install.sh | sh -s -- -y
