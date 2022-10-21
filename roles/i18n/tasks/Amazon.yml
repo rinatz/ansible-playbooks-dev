@@ -1,10 +1,9 @@
 ---
 
-- name: generate locale
+- name: install packages
   become: yes
-  ansible.builtin.command: localedef -i ja_JP -f UTF-8 ja_JP.UTF-8
-  register: result
-  changed_when: result.rc == 0
+  ansible.builtin.yum:
+    name: glibc-langpack-ja
   tags:
     - i18n
 

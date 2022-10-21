@@ -1,6 +1,6 @@
 ---
 
-- name: install language-pack-ja
+- name: install packages
   become: yes
   ansible.builtin.apt:
     state: present
