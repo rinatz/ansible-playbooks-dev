@@ -10,7 +10,7 @@
     - fzf
 
 - name: install
-  command: ~/.fzf/install
+  command: ~/.fzf/install --all
   register: result
   changed_when: result.rc == 0
   tags:

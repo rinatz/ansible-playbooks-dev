@@ -4,7 +4,12 @@
 
 Ansible で Linux の開発環境を構築します。
 
-## 環境構築手順
+## 対応 OS
+
+- Amazon Linux 2
+- Ubuntu 22.04
+
+## 使い方
 
 下記を実行してください。
 

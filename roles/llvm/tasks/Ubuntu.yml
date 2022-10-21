@@ -5,7 +5,8 @@
   apt:
     state: present
     name:
+      - llvm-dev
+      - libclang-dev
       - clang
-      - clang-format
   tags:
     - llvm

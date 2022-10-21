@@ -4,21 +4,19 @@
   roles:
     - setup
     - scm
+    - docker
     - buildpack
     - stow
+    - gdb
+    - llvm
+    - cmake
+    - jq
     - python
     - rust
     - go
-    - direnv
     - fzf
     - ghq
-    - jq
-    - libxml
-    - cmake
-    - docker
-    - llvm
-    - gdb
-    - i18n
+    - direnv
     - starship
-    - shellcheck
+    - i18n
     - dotfiles
