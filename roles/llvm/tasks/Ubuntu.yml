@@ -2,7 +2,7 @@
 
 - name: install packages
   become: yes
-  apt:
+  ansible.builtin.apt:
     state: present
     name:
       - llvm-dev

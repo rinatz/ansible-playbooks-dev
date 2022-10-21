@@ -2,7 +2,7 @@
 
 - name: install stow
   become: yes
-  yum:
+  ansible.builtin.yum:
     state: present
     name:
       - stow

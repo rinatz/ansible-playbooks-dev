@@ -2,7 +2,7 @@
 
 - name: install cmake
   become: yes
-  yum:
+  ansible.builtin.yum:
     state: present
     name:
       - cmake3
@@ -11,7 +11,7 @@
 
 - name: symlink
   become: yes
-  file:
+  ansible.builtin.file:
     src: /usr/bin/cmake3
     dest: /usr/local/bin/cmake
     state: link

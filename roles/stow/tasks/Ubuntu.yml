@@ -2,7 +2,7 @@
 
 - name: install stow
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: stow
     state: present
     update_cache: yes

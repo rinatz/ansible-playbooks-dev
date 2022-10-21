@@ -2,7 +2,7 @@
 
 - name: install packages
   become: yes
-  yum:
+  ansible.builtin.yum:
     state: present
     name:
       - autoconf

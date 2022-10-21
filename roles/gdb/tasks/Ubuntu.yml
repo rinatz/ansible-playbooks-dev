@@ -2,7 +2,7 @@
 
 - name: install gdb
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: gdb
     state: present
     update_cache: yes
@@ -12,7 +12,7 @@
 
 - name: enable ptrace
   become: yes
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: /etc/sysctl.d/10-ptrace.conf
     regexp: '^(kernel.yama.ptrace_scope)\s+=\s+\d+'
     line: '\1 = 0'

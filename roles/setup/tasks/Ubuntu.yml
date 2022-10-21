@@ -2,7 +2,7 @@
 
 - name: configure apt
   become: yes
-  replace:
+  ansible.builtin.replace:
     dest: /etc/apt/sources.list
     regexp: 'http://(.*\.)?archive\.ubuntu\.com/ubuntu/'
     replace: 'http://jp.archive.ubuntu.com/ubuntu/'
@@ -11,7 +11,7 @@
 
 - name: upgrade packages  # noqa package-latest
   become: yes
-  apt:
+  ansible.builtin.apt:
     state: latest
     update_cache: yes
     name: "*"
@@ -20,7 +20,7 @@
 
 - name: dist-upgrade packages
   become: yes
-  apt:
+  ansible.builtin.apt:
     upgrade: dist
     update_cache: yes
     cache_valid_time: 3600

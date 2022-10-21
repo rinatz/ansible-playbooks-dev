@@ -2,7 +2,7 @@
 
 - name: install jq
   become: yes
-  yum:
+  ansible.builtin.yum:
     state: present
     name:
       - jq

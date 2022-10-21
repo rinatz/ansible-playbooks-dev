@@ -2,7 +2,7 @@
 
 - name: configure yum
   become: yes
-  command: amazon-linux-extras install epel
+  ansible.builtin.command: amazon-linux-extras install epel
   register: result
   changed_when: result.rc == 0
   tags:
@@ -10,7 +10,7 @@
 
 - name: update packages   # noqa package-latest
   become: yes
-  yum:
+  ansible.builtin.yum:
     state: latest
     name: "*"
   tags:

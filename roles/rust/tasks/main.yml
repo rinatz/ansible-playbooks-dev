@@ -1,7 +1,7 @@
 ---
 
 - name: install rustup
-  shell: |
+  ansible.builtin.shell: |
     set -o pipefail
     curl -fsSL https://sh.rustup.rs | bash -s -- -y
   args:

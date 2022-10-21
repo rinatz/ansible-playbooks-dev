@@ -2,7 +2,7 @@
 
 - name: install packages
   become: yes
-  yum:
+  ansible.builtin.yum:
     name:
       - bzip2-devel
       - gdbm-devel

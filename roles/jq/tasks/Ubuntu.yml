@@ -2,7 +2,7 @@
 
 - name: install jq
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: jq
     state: present
     update_cache: yes

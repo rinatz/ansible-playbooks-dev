@@ -1,8 +1,8 @@
 ---
 
-- name: "download"
+- name: download
   become: yes
-  unarchive:
+  ansible.builtin.unarchive:
     src: "https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz"
     dest: /usr/local/stow
     remote_src: yes
@@ -11,7 +11,7 @@
 
 - name: stow
   become: yes
-  command: stow go
+  ansible.builtin.command: stow go
   args:
     chdir: /usr/local/stow
   register: result

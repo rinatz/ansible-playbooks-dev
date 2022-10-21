@@ -2,7 +2,7 @@
 
 - name: install bash-completion
   become: yes
-  apt:
+  ansible.builtin.apt:
     name: bash-completion
     state: present
     update_cache: yes
@@ -11,7 +11,7 @@
     - dotfiles
 
 - name: install dotfiles
-  shell: |
+  ansible.builtin.shell: |
     set -o pipefail
     curl -L http://bit.ly/rinatz-dotfiles | bash
   args:

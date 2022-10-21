@@ -2,7 +2,7 @@
 
 - name: install docker
   become: yes
-  command: amazon-linux-extras install -y docker
+  ansible.builtin.command: amazon-linux-extras install -y docker
   register: result
   changed_when: result.rc == 0
   tags:
@@ -10,7 +10,7 @@
 
 - name: add user to docker group
   become: yes
-  command: usermod -aG docker "{{ ansible_user_id }}"
+  ansible.builtin.command: usermod -aG docker "{{ ansible_user_id }}"
   register: result
   changed_when: result.rc == 0
   tags:
@@ -18,7 +18,7 @@
 
 - name: start docker service
   become: yes
-  service:
+  ansible.builtin.service:
     name: docker
     state: started
     enabled: yes
