@@ -2,13 +2,12 @@
 
 [![license](https://img.shields.io/badge/LICENSE-MIT-blue.svg)](LICENSE)
 
-Ansible で Linux の仮想環境を構築します。
+Ansible で Linux の開発環境を構築します。
 
 ## 環境構築手順
 
-仮想マシン上にこのリポジトリをマウントして、下記を実行してください。
+下記を実行してください。
 
 ```shell
-$ ./ansible-install.sh
-$ ./ansible-playbook.sh
+$ ansible-playbook -i HOST, site.yml [--tags=TAGS]
 ```
