@@ -20,7 +20,7 @@ This repository stores Ansible playbooks for provisioning local development envi
 Clone this repository.
 
 ```shell
-$ git clone https://github.com/rinatz/playbooks
+$ git clone https://github.com/rinatz/ansible-playbooks-dev
 ```
 
 Move `playbooks` directory and run below command.
