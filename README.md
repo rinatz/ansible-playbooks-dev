@@ -1,5 +1,7 @@
 # ansible-playbooks-dev
 
+![](https://cdn.svgporn.com/logos/ansible.svg)
+
 [![license](https://img.shields.io/badge/LICENSE-MIT-blue.svg)](LICENSE)
 
 This repository stores Ansible playbooks for provisioning local development environment.
