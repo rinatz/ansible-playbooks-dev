@@ -23,7 +23,7 @@ Clone this repository.
 $ git clone https://github.com/rinatz/ansible-playbooks-dev
 ```
 
-Move `playbooks` directory and run below command.
+Move `ansible-playbooks-dev` directory and run below command.
 
 ```shell
 $ ansible-playbook -i HOST,... site.yml [-t TAG,...]
