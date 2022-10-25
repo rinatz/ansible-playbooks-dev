@@ -1,11 +1,10 @@
 ---
-
 - name: install stow
-  become: yes
+  become: true
   ansible.builtin.apt:
     name: stow
     state: present
-    update_cache: yes
+    update_cache: true
     cache_valid_time: 3600
   tags:
     - stow

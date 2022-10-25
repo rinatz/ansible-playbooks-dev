@@ -1,21 +1,20 @@
 ---
-
 - name: install gdb
-  become: yes
+  become: true
   ansible.builtin.apt:
     name: gdb
     state: present
-    update_cache: yes
+    update_cache: true
     cache_valid_time: 3600
   tags:
     - gdb
 
 - name: enable ptrace
-  become: yes
+  become: true
   ansible.builtin.lineinfile:
     path: /etc/sysctl.d/10-ptrace.conf
     regexp: '^(kernel.yama.ptrace_scope)\s+=\s+\d+'
     line: '\1 = 0'
-    backrefs: yes
+    backrefs: true
   tags:
     - gdb

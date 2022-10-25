@@ -1,5 +1,4 @@
 ---
-
 - name: install rustup
   ansible.builtin.shell: |
     set -o pipefail

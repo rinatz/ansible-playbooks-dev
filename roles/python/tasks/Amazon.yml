@@ -1,7 +1,6 @@
 ---
-
 - name: install packages
-  become: yes
+  become: true
   ansible.builtin.yum:
     name:
       - bzip2-devel

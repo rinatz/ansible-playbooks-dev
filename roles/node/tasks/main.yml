@@ -1,5 +1,4 @@
 ---
-
 - name: install node
   ansible.builtin.shell: |
     set -o pipefail

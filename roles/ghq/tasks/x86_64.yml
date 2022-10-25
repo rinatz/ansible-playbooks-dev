@@ -1,5 +1,4 @@
 ---
-
 - name: create temporary directory
   ansible.builtin.tempfile:
     state: directory
@@ -11,17 +10,17 @@
   ansible.builtin.unarchive:
     src: "https://github.com/x-motemen/ghq/releases/download/v{{ ghq_version }}/ghq_linux_amd64.zip"
     dest: "{{ temp.path }}"
-    remote_src: yes
+    remote_src: true
   tags:
     - ghq
 
 - name: copy
-  become: yes
+  become: true
   ansible.builtin.copy:
     src: "{{ temp.path }}/ghq_linux_amd64/ghq"
     dest: /usr/local/bin
     mode: +x
-    remote_src: yes
+    remote_src: true
   tags:
     - ghq
 

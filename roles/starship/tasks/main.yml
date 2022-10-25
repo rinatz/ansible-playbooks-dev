@@ -1,5 +1,4 @@
 ---
-
 - name: install starship
   ansible.builtin.shell: |
     set -o pipefail

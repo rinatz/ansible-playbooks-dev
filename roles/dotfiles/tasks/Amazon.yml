@@ -1,7 +1,6 @@
 ---
-
 - name: install bash-completion
-  become: yes
+  become: true
   ansible.builtin.yum:
     state: present
     name:

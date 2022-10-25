@@ -1,5 +1,4 @@
 ---
-
 - include_tasks: "{{ ansible_distribution }}.yml"
   tags:
     - docker
