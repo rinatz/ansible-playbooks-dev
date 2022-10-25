@@ -1,5 +1,4 @@
 ---
-
 - name: Run all roles
   hosts: all
   roles:
