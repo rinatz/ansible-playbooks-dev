@@ -1,13 +1,5 @@
 ---
-- ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
-  tags:
-    - stow
-
-- name: create directory
-  become: true
-  file:
-    path: /usr/local/stow
-    state: directory
-    mode: 0755
+- name: Include tasks
+  ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
   tags:
     - stow
