@@ -1,5 +1,5 @@
 ---
-- name: install gdb
+- name: Install gdb
   become: true
   ansible.builtin.yum:
     state: present

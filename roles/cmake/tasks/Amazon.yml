@@ -1,5 +1,5 @@
 ---
-- name: install cmake
+- name: Install cmake
   become: true
   ansible.builtin.yum:
     state: present
@@ -8,7 +8,7 @@
   tags:
     - cmake
 
-- name: symlink
+- name: Symlink
   become: true
   ansible.builtin.file:
     src: /usr/bin/cmake3

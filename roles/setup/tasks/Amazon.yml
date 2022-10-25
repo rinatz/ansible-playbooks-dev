@@ -1,7 +1,7 @@
 ---
 # It needs to modify for resolving the error "Could not resolve host: xxxxxxxx.$awsregion.$awsdomain".
 # See: https://aws.amazon.com/premiumsupport/knowledge-center/ec2-troubleshoot-yum-errors-al1-al2/
-- name: modify region
+- name: Modify region
   become: true
   ansible.builtin.lineinfile:
     path: /etc/yum/vars/awsregion
@@ -11,7 +11,7 @@
   tags:
     - setup
 
-- name: configure yum
+- name: Configure yum
   become: true
   ansible.builtin.command: amazon-linux-extras install epel
   register: result
@@ -19,7 +19,7 @@
   tags:
     - setup
 
-- name: update packages # noqa package-latest
+- name: Update packages # noqa package-latest
   become: true
   ansible.builtin.yum:
     state: latest

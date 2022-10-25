@@ -1,5 +1,5 @@
 ---
-- name: clone
+- name: Clone repository
   ansible.builtin.git:
     repo: https://github.com/junegunn/fzf.git
     dest: ~/.fzf
@@ -8,7 +8,7 @@
   tags:
     - fzf
 
-- name: install
+- name: Install fzf
   ansible.builtin.command: ~/.fzf/install --all
   register: result
   changed_when: result.rc == 0

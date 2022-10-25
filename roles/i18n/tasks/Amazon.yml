@@ -1,12 +1,12 @@
 ---
-- name: install packages
+- name: Install packages
   become: true
   ansible.builtin.yum:
     name: glibc-langpack-ja
   tags:
     - i18n
 
-- name: set locale
+- name: Set locale
   become: true
   ansible.builtin.command: localectl set-locale LANG=ja_JP.UTF-8
   register: result
@@ -14,7 +14,7 @@
   tags:
     - i18n
 
-- name: set timezone
+- name: Set timezone
   become: true
   ansible.builtin.timezone:
     name: Asia/Tokyo

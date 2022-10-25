@@ -1,5 +1,5 @@
 ---
-- name: install bash-completion
+- name: Install bash-completion
   become: true
   ansible.builtin.yum:
     state: present
@@ -8,7 +8,7 @@
   tags:
     - dotfiles
 
-- name: install dotfiles
+- name: Install dotfiles
   ansible.builtin.shell: |
     set -o pipefail
     curl -L http://bit.ly/rinatz-dotfiles | bash

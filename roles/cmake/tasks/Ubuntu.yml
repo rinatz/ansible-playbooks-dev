@@ -1,5 +1,5 @@
 ---
-- name: add apt key
+- name: Add apt key
   become: true
   ansible.builtin.apt_key:
     url: https://apt.kitware.com/keys/kitware-archive-latest.asc
@@ -7,7 +7,7 @@
   tags:
     - cmake
 
-- name: add apt repository
+- name: Add apt repository
   become: true
   ansible.builtin.apt_repository:
     repo: deb https://apt.kitware.com/ubuntu/ {{ ansible_distribution_release }} main
@@ -16,7 +16,7 @@
   tags:
     - cmake
 
-- name: install cmake
+- name: Install cmake
   become: true
   ansible.builtin.apt:
     name: cmake

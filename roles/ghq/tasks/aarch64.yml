@@ -1,12 +1,12 @@
 ---
-- name: create temporary directory
+- name: Create temporary directory
   ansible.builtin.tempfile:
     state: directory
   register: temp
   tags:
     - ghq
 
-- name: download
+- name: Download ghq
   ansible.builtin.unarchive:
     src: "https://github.com/x-motemen/ghq/releases/download/v{{ ghq_version }}/ghq_linux_arm64.zip"
     dest: "{{ temp.path }}"
@@ -14,7 +14,7 @@
   tags:
     - ghq
 
-- name: copy
+- name: Copy ghq
   become: true
   ansible.builtin.copy:
     src: "{{ temp.path }}/ghq_linux_arm64/ghq"
@@ -24,7 +24,7 @@
   tags:
     - ghq
 
-- name: remove temporary directory
+- name: Remove temporary directory
   ansible.builtin.file:
     path: "{{ temp.path }}"
     state: absent

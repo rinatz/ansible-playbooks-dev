@@ -1,6 +1,7 @@
 ---
 
-- hosts: all
+- name: Run all roles
+  hosts: all
   roles:
     - setup
     - scm

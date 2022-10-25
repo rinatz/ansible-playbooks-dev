@@ -1,5 +1,5 @@
 ---
-- name: download
+- name: Download go
   become: true
   ansible.builtin.unarchive:
     src: "https://go.dev/dl/go{{ go_version }}.linux-amd64.tar.gz"
@@ -8,7 +8,7 @@
   tags:
     - go
 
-- name: stow
+- name: Stow
   become: true
   ansible.builtin.command: stow go
   args:

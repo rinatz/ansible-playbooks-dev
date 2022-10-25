@@ -1,5 +1,5 @@
 ---
-- name: install node
+- name: Install node
   ansible.builtin.shell: |
     set -o pipefail
     curl https://get.volta.sh | bash

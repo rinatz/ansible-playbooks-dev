@@ -1,5 +1,5 @@
 ---
-- name: configure apt
+- name: Configure apt
   become: true
   ansible.builtin.replace:
     dest: /etc/apt/sources.list
@@ -8,7 +8,7 @@
   tags:
     - setup
 
-- name: upgrade packages # noqa package-latest
+- name: Upgrade packages # noqa package-latest
   become: true
   ansible.builtin.apt:
     state: latest
@@ -17,7 +17,7 @@
   tags:
     - setup
 
-- name: dist-upgrade packages
+- name: Upgrade dist packages
   become: true
   ansible.builtin.apt:
     upgrade: dist

@@ -1,5 +1,5 @@
 ---
-- name: install stow
+- name: Install stow
   become: true
   ansible.builtin.yum:
     state: present

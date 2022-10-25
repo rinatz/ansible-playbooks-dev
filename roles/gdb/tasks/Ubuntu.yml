@@ -1,5 +1,5 @@
 ---
-- name: install gdb
+- name: Install gdb
   become: true
   ansible.builtin.apt:
     name: gdb
@@ -9,7 +9,7 @@
   tags:
     - gdb
 
-- name: enable ptrace
+- name: Enable ptrace
   become: true
   ansible.builtin.lineinfile:
     path: /etc/sysctl.d/10-ptrace.conf

@@ -1,12 +1,12 @@
 ---
-- name: add apt repository
+- name: Add apt repository
   become: true
   ansible.builtin.apt_repository:
     repo: "ppa:git-core/ppa"
   tags:
     - scm
 
-- name: install packages
+- name: Install packages
   become: true
   ansible.builtin.apt:
     state: present
