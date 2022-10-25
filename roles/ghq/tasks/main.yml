@@ -1,4 +1,4 @@
 ---
-- include_tasks: "{{ ansible_architecture }}.yml"
+- ansible.builtin.include_tasks: "{{ ansible_architecture }}.yml"
   tags:
     - ghq

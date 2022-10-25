@@ -1,5 +1,5 @@
 ---
-- include_tasks: "{{ ansible_distribution }}.yml"
+- ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
   tags:
     - stow
 
