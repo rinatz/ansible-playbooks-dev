@@ -6,7 +6,6 @@
     ~/.volta/bin/volta install node
   args:
     executable: /bin/bash
-    warn: false
   register: result
   changed_when: result.rc == 0
   tags:

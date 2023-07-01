@@ -14,7 +14,6 @@
     curl -L http://bit.ly/rinatz-dotfiles | bash
   args:
     executable: /bin/bash
-    warn: false
   register: result
   changed_when: result.rc == 0
   tags:
