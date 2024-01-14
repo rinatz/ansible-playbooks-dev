@@ -1,11 +1,11 @@
 ---
-- name: Install direnv
+- name: Install mise
   ansible.builtin.shell: |
     set -o pipefail
-    mise use --global direnv
+    curl https://mise.jdx.dev/install.sh | bash
   args:
     executable: /bin/bash
   register: result
   changed_when: result.rc == 0
   tags:
-    - direnv
+    - mise

@@ -1,5 +1,11 @@
 ---
-- name: Include tasks
-  ansible.builtin.include_tasks: "{{ ansible_architecture }}.yml"
-  tags:
-    - go
+  - name: Install go
+    ansible.builtin.shell: |
+      set -o pipefail
+      mise use --global go
+    args:
+      executable: /bin/bash
+    register: result
+    changed_when: result.rc == 0
+    tags:
+      - go

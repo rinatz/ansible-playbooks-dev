@@ -1,5 +1,11 @@
 ---
-- name: Include tasks
-  ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
+- name: Install cmake
+  ansible.builtin.shell: |
+    set -o pipefail
+    mise use --global cmake
+  args:
+    executable: /bin/bash
+  register: result
+  changed_when: result.rc == 0
   tags:
     - cmake
