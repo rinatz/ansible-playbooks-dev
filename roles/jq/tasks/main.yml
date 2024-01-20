@@ -1,5 +1,11 @@
 ---
-- name: Include tasks
-  ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
+- name: Install jq
+  ansible.builtin.shell: |
+    set -o pipefail
+    mise use --global jq
+  args:
+    executable: /bin/bash
+  register: result
+  changed_when: result.rc == 0
   tags:
     - jq

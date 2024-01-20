@@ -8,17 +8,16 @@
     - buildpack
     - stow
     - mise
-    - gdb
     - llvm
+    - gdb
     - cmake
-    - jq
-    - python
     - rust
-    - go
     - node
+    - python
+    - go
     - fzf
     - ghq
-    - direnv
+    - jq
     - starship
     - i18n
     - dotfiles

@@ -1,5 +1,11 @@
 ---
-- name: Include tasks
-  ansible.builtin.include_tasks: "{{ ansible_architecture }}.yml"
+- name: Install ghq
+  ansible.builtin.shell: |
+    set -o pipefail
+    mise use --global ghq
+  args:
+    executable: /bin/bash
+  register: result
+  changed_when: result.rc == 0
   tags:
     - ghq

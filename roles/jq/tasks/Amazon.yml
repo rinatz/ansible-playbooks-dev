@@ -1,9 +1,0 @@
----
-- name: Install jq
-  become: true
-  ansible.builtin.yum:
-    state: present
-    name:
-      - jq
-  tags:
-    - jq
