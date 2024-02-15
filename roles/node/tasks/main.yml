@@ -2,7 +2,7 @@
 - name: Install node
   ansible.builtin.shell: |
     set -o pipefail
-    mise use --global node
+    mise use --global --yes node
   args:
     executable: /bin/bash
   register: result

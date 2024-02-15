@@ -1,11 +1,11 @@
 ---
-- name: Install jq
+- name: Install eza
   ansible.builtin.shell: |
     set -o pipefail
-    mise use --global --yes jq
+    mise use --global --yes eza
   args:
     executable: /bin/bash
   register: result
   changed_when: result.rc == 0
   tags:
-    - jq
+    - eza

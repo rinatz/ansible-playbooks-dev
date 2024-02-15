@@ -18,6 +18,8 @@
     - fzf
     - ghq
     - jq
+    - eza
+    - delta
     - starship
     - i18n
     - dotfiles

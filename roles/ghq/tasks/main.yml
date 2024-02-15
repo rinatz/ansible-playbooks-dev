@@ -2,7 +2,7 @@
 - name: Install ghq
   ansible.builtin.shell: |
     set -o pipefail
-    mise use --global ghq
+    mise use --global --yes ghq
   args:
     executable: /bin/bash
   register: result

@@ -2,7 +2,7 @@
 - name: Install cmake
   ansible.builtin.shell: |
     set -o pipefail
-    mise use --global cmake
+    mise use --global --yes cmake
   args:
     executable: /bin/bash
   register: result
