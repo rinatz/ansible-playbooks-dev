@@ -4,7 +4,6 @@
     repo: https://github.com/junegunn/fzf.git
     dest: ~/.fzf
     depth: 1
-    version: "{{ fzf_version }}"
   tags:
     - fzf
 
