@@ -2,7 +2,7 @@
 - name: Install mise
   ansible.builtin.shell: |
     set -o pipefail
-    curl https://mise.jdx.dev/install.sh | bash
+    curl https://mise.run | bash
   args:
     executable: /bin/bash
   register: result

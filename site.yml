@@ -6,20 +6,12 @@
     - scm
     - docker
     - buildpack
-    - stow
-    - mise
+    - i18n
     - llvm
     - gdb
-    - cmake
+    - stow
     - rust
-    - node
-    - python
-    - go
     - fzf
-    - ghq
-    - jq
-    - lsd
-    - delta
     - starship
-    - i18n
+    - mise
     - dotfiles
