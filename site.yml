@@ -7,9 +7,7 @@
     - docker
     - buildpack
     - i18n
-    - llvm
     - gdb
-    - stow
     - rust
     - fzf
     - starship
