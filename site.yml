@@ -2,8 +2,6 @@
 - name: Run all roles
   hosts: all
   roles:
-    - setup
-    - locale
     - scm
     - docker
     - buildpack
