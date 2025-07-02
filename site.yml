@@ -3,10 +3,10 @@
   hosts: all
   roles:
     - setup
+    - locale
     - scm
     - docker
     - buildpack
-    - i18n
     - gdb
     - rust
     - fzf

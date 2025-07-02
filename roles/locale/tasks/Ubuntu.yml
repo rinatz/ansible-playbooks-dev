@@ -7,7 +7,7 @@
     cache_valid_time: 3600
     name: language-pack-ja
   tags:
-    - i18n
+    - locale
 
 - name: Set locale
   become: true
@@ -15,11 +15,11 @@
   register: result
   changed_when: result.rc == 0
   tags:
-    - i18n
+    - locale
 
 - name: Set timezone
   become: true
   ansible.builtin.timezone:
     name: Asia/Tokyo
   tags:
-    - i18n
+    - locale

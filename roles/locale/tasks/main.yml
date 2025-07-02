@@ -2,4 +2,4 @@
 - name: Include tasks
   ansible.builtin.include_tasks: "{{ ansible_distribution }}.yml"
   tags:
-    - i18n
+    - locale
