@@ -1,6 +1,0 @@
----
-- name: Setup initial environment
-  hosts: all
-  roles:
-    - setup
-    - locale
