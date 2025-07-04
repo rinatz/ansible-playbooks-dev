@@ -4,10 +4,6 @@
 
 This repository stores Ansible playbooks for provisioning local development environment.
 
-## Requirements
-
-- [Ansible](https://docs.ansible.com/ansible/latest/index.html)
-
 ## Supported OS
 
 - Amazon Linux 2
@@ -15,14 +11,9 @@ This repository stores Ansible playbooks for provisioning local development envi
 
 ## Usage
 
-Clone this repository.
-
 ```shell
+$ python3 -m pip install ansible
 $ git clone https://github.com/rinatz/ansible-playbooks
-```
-
-Move `ansible-playbooks` directory and run below command.
-
-```shell
+$ mv ansible-playbooks
 $ ansible-playbook -i localhost, -c local site.yml
 ```
