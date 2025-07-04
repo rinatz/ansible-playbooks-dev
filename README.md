@@ -6,7 +6,6 @@ This repository stores Ansible playbooks for provisioning local development envi
 
 ## Supported OS
 
-- Amazon Linux 2
 - Ubuntu 22.04
 
 ## Usage
