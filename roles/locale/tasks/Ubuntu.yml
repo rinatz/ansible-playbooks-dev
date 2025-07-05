@@ -19,7 +19,7 @@
 
 - name: Set timezone
   become: true
-  ansible.builtin.timezone:
+  community.general.timezone:
     name: Asia/Tokyo
   tags:
     - locale

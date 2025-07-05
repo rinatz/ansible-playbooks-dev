@@ -8,7 +8,7 @@
   tags:
     - setup
 
-- name: Upgrade packages # noqa package-latest
+- name: Upgrade packages # noqa: package-latest
   become: true
   ansible.builtin.apt:
     state: latest

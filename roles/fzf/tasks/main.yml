@@ -1,5 +1,5 @@
 ---
-- name: Clone repository
+- name: Clone repository  # noqa: latest[git]
   ansible.builtin.git:
     repo: https://github.com/junegunn/fzf.git
     dest: ~/.fzf

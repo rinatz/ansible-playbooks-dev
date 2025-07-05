@@ -3,6 +3,7 @@
 
 ### Ansible ###
 *.retry
+.ansible/*
 
 # End of https://www.toptal.com/developers/gitignore/api/ansible
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode
