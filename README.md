@@ -14,5 +14,5 @@ This repository stores Ansible playbooks for provisioning local development envi
 $ python3 -m pip install ansible
 $ git clone https://github.com/rinatz/ansible-playbooks
 $ mv ansible-playbooks
-$ ansible-playbook -i localhost, -c local site.yml
+$ ansible-playbook -i localhost, -c local --ask-become-pass site.yml
 ```
